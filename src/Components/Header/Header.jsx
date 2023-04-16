@@ -25,12 +25,12 @@ const Header = () => {
             <motion.nav className='header__nav'
                 initial={{ width: 0 }}
                 animate={{ width: '100%' }}
-                transition={{ delay: 0.5, duration: 1.5 }}
+                transition={{ delay: 1, duration: 1.5 }}
             >
                 <motion.ul className='header__nav-list'
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 0, duration: 1.5 }}
+                    transition={{ delay: 2, duration: 1.5 }}
                 >
                     <motion.li className='header__nav-item'
                         whileHover={{ scale: 1.1 }}
