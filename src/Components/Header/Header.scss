@@ -5,7 +5,7 @@
     align-items: start;
     gap: 2rem;
     width: 100%;
-    height: 70vh;
+    height:96vh;
     
     &__nav{
         background-color: #171717;
@@ -18,8 +18,8 @@
     }
     &__nav-list{
         width: 100%;
-        @media screen and (min-width: 60rem) {
-            width: 60rem;
+        @media screen and (min-width: 65rem) {
+            width: 65rem;
             margin: 2rem auto;
 
         }
@@ -52,14 +52,19 @@
         }
     }
     &__content{
+        @media screen and (min-width: 65rem) {
+            width: 65rem;
+            margin: 2rem auto;
+        }
         margin: 2rem auto;
         width: 100%;
         display: flex;
         justify-content: center;
-        gap: 2rem;
+        align-items: center;
+        gap: 5rem;
     }
     &__logo{
-        width: 10rem;
+        width: 25vh;
         border-radius: 50%;
     img{
         border-radius: 50%;

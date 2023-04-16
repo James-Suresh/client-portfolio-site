@@ -6,6 +6,7 @@ import Typed from 'typed.js';
 import { useEffect, useRef } from 'react';
 const Header = () => {
     const title = useRef(null);
+   
 
     useEffect(() => {
         const typed = new Typed(title.current, {
@@ -67,14 +68,14 @@ const Header = () => {
                     <img src={client_image} alt="profile-image" />
                 </motion.div>
                 <div className='header__title-div'>
-                    {/* <motion.h1
-                        className='header__title'
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 1, duration: 1.5 }}
-                    >Angela Zhang
-                    </motion.h1> */}
-                    <h1 className='header__title' ref = {title}></h1> 
+                <motion.h2
+                        className='header__subtitle'
+                        initial={{ opacity: 0, y:+100 }}
+                        animate={{ opacity: 1,y:0 }}
+                        transition={{ delay: 0, duration: 0.5 }}
+                    >Hello I'm
+                    </motion.h2>  
+                <h1 className='header__title' ref = {title}></h1> 
                     <motion.h2
                         className='header__subtitle'
                         initial={{ opacity: 0 }}
