@@ -1,7 +1,9 @@
 import Header from './Components/Header/Header';
 import './App.scss';
 import { useEffect, useState } from 'react';
-
+import { BrowserRouter } from 'react-router-dom';
+import Portfolio from './Components/Portfolio/Portfolio';
+import { Link, Element } from 'react-scroll';
 
 
 function App() {
@@ -18,12 +20,19 @@ function App() {
 }, []);
   return (
     <div className="App">
+    
       {(width>768) &&
+      <>
       <Header/>
+      <Element name = "Portfolio">
+        <Portfolio/>
+      </Element>
+      </>
       }
       {(width<768) &&
       <h1>Sorry only desktop view is supported</h1>
       }
+    
     </div>
   );
 }
