@@ -4,50 +4,74 @@
 // import  Pachinko from "../../Assets/Videos/Pachinko.webm";
 // import Wednesday from "../../Assets/Videos/Wednesday.webm";
 // import WhereCrawdadsSing from "../../Assets/Videos/WhereCrawdadsSing.webm";
+
+import pachinko_bg from "../../Assets/Images/Pachinko-bg.jpg";
+import wednesday_bg from "../../Assets/Images/Wednesday-bg.jpg";
+import where_crawdads_sing_bg from "../../Assets/Images/WTCS-bg.jpg";
+
+import pachinko_title_image from "../../Assets/Images/Pachinko-title.jpg";
+import wednesday_title_image from "../../Assets/Images/Wednesday-title.jpg";
+import where_crawdads_sing_title_image from "../../Assets/Images/WTCS-title.png";
 import "./Portfolio.scss";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
 const movies = [
     {
       title: "Where Crawdads Sing",
-      image:
-        "https://m.media-amazon.com/images/M/MV5BMTJmNGJmYTgtYjAxNy00YmMzLTk2YTYtMGIzMmUwNDMyMTY1XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg",
+      image: where_crawdads_sing_title_image,
       link: "https://m.imdb.com/title/tt9411972/?ref_=nm_knf_t_1",
       roles: "VFX Production",
+      bg: where_crawdads_sing_bg,
       //video: WhereCrawdadsSing,
     },
     {
       title: "Wednesday",
-      image:
-        "https://m.media-amazon.com/images/M/MV5BM2ZmMjEyZmYtOGM4YS00YTNhLWE3ZDMtNzQxM2RhNjBlODIyXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg",
+      image: wednesday_title_image,
       link: "https://www.imdb.com/title/tt13443470/",
       roles: "VFX Production",
+      bg: wednesday_bg,
       //video: Wednesday,
     },
     {
       title: "Pachinko",
-      image:
-        "https://m.media-amazon.com/images/M/MV5BNjJjZWEyOTMtYjVkYi00MjY0LTk4OTEtMWUwMDE4NWYyODg5XkEyXkFqcGdeQXVyNjEwNTM2Mzc@._V1_.jpg",
+      image: pachinko_title_image,
       link: "https://m.imdb.com/title/tt8888462/",
       roles: "VFX Production",
+      bg: pachinko_bg,
      // video: Pachinko,
     },
   ];
 
 const Portfolio = () => {
   const [video, setVideo] = useState(null);
+  const [bg, setBg] = useState(null);
   
   
 
   return (
-    <div className="portfolio">
+    <div className="portfolio"
+    >
+      
+      <AnimatePresence>
+       {bg && (
+        <motion.img
+        initial = {{opacity: 0}}
+        animate = {{opacity: 1}}
+        exit = {{opacity: 0}}
+        transition = {{duration: 0.5}}
+        className="portfolio__bg" src={bg}></motion.img> 
+      )} 
+      </AnimatePresence>
+
       {/* {video && (
         <video className="portfolio__video-bg" autoPlay>
           <source src={video}></source>
         </video>
       )} */}
-      <div className="portfolio__content">
+      <div className="portfolio__content"
+      
+      >
         <h1>Portfolio</h1>
 
         <ul className="portfolio__movie-list">
@@ -58,9 +82,9 @@ const Portfolio = () => {
               viewport={{ once: true, amount: 0.8 }}
               transition={{ delay: 0.5 * index, duration: 0.5, type: "tween" }}
               key={index}
-              onMouseEnter={() => setVideo(movie.video)}
+              onMouseEnter={() => setBg(movie.bg)}
               onMouseLeave={() => {
-                setVideo(null);
+                setBg(null);
               }}
               className="portfolio__movie-item"
             >
