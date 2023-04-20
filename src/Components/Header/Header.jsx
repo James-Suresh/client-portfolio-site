@@ -6,23 +6,12 @@ import { Link } from "react-scroll";
 
 import { useEffect, useRef } from "react";
 const Header = () => {
-  const title = useRef(null);
+  
 
   const handleSelectedNav = (to) => {
     console.log(to);
    };
-  useEffect(() => {
-    const typed = new Typed(title.current, {
-      strings: ["Angela Zhang"],
-      typeSpeed: 50,
-      backSpeed: 50,
-    });
-    return () => {
-      // Destroy Typed instance during cleanup to stop animation
-      typed.destroy();
-    };
-  }, []);
-
+  
   return (
     <header className="header">
       <motion.nav
@@ -80,53 +69,7 @@ const Header = () => {
         </div>
       </motion.nav>
 
-      <div className="header__content">
-        {/* <motion.div
-          className="header__logo"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1, duration: 1.5 }}
-        >
-          <img src={client_image} alt="profile-image" />
-        </motion.div> */}
-        <div className="header__title-div">
-          <motion.h2
-            className="header__subtitle"
-            initial={{ opacity: 0, y: +100 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0, duration: 0.5 }}
-          >
-            Hello I'm
-          </motion.h2>
-          <motion.h1 
-          className="header__title"
-          ref={title}
-          animate={{ color: "#8b0000"}}
-          transition={{ delay: 1, duration: 1.5 }}
-           ></motion.h1>
-          <motion.h2
-            className="header__subtitle"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 2, duration: 1 }}
-          >
-            VFX Production Manager
-          </motion.h2>
-          <motion.div
-            className="header__socials"
-            initial={{ opacity: 0 , y: +100}}
-            animate={{ opacity: 1 , y: 0}}
-            transition={{ delay: 3, duration: 1 }}
-          >
-            <button className="header__socials-btn header__socials-btn--in">
-              LinkedIn
-            </button>
-            <button className="header__socials-btn header__socials-btn--imdb">
-              IMDb
-            </button>
-          </motion.div>
-        </div>
-      </div>
+     
     </header>
   );
 };
