@@ -18,7 +18,7 @@ const Header = () => {
         className="header__nav"
         initial={{ width: 0 }}
         animate={{ width: "100%" }}
-        transition={{ delay: 3.5, duration: 1.5 }}
+        transition={{ delay: 3, duration: 1.5 }}
       >
         
         <div className="header__nav-content">
