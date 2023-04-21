@@ -21,7 +21,7 @@ const movies = [
       title: "Where Crawdads Sing",
       image: where_crawdads_sing_title_image,
       link: "https://m.imdb.com/title/tt9411972/?ref_=nm_knf_t_1",
-      roles: "VFX Production",
+      roles: "VFX Production Coordinator",
       bg: where_crawdads_sing_bg,
       //video: WhereCrawdadsSing,
     },
@@ -29,7 +29,7 @@ const movies = [
       title: "Wednesday",
       image: wednesday_title_image,
       link: "https://www.imdb.com/title/tt13443470/",
-      roles: "VFX Production",
+      roles: "VFX Production Manager",
       bg: wednesday_bg,
       //video: Wednesday,
     },
@@ -37,7 +37,7 @@ const movies = [
       title: "Pachinko",
       image: pachinko_title_image,
       link: "https://m.imdb.com/title/tt8888462/",
-      roles: "VFX Production",
+      roles: "VFX Production Coordinator",
       bg: pachinko_bg,
      // video: Pachinko,
     },
@@ -72,10 +72,10 @@ const Portfolio = () => {
       <div className="portfolio__content"
       
       >
-        <h1>Portfolio</h1>
+        <h1 className="portfolio__title">Portfolio</h1>
 
         <ul className="portfolio__movie-list">
-          {movies.map((movie, index) => (
+          { movies.map((movie, index) => (
             <motion.li
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -91,6 +91,7 @@ const Portfolio = () => {
               <div className="portfolio__img-div">
                 <img src={movie.image} alt={movie.title} />
               </div>
+              <span> {movie.roles} </span>  
             </motion.li>
           ))}
         </ul>

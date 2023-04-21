@@ -29,7 +29,7 @@ function App() {
         <About/>
       </Element>
       <Element name = "Portfolio">
-        {/* a<Portfolio/> */}
+        <Portfolio/>
       </Element>
       </>
       }

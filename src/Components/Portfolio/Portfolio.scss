@@ -2,12 +2,15 @@
 .portfolio{
     position: relative;
     z-index: 0;
-    height: 100vh;
     background-color: #171717;
     $gap:4%;
     $movie_count:3;
+    width: 100%;
     background-repeat: no-repeat;
-    
+    &__title{
+        align-self: center;
+        padding: 0 0 1rem;
+    }
     &__video-bg{
         background-color: #171717;
         position: absolute;
@@ -25,45 +28,56 @@
     }
     
     &__content{
+        margin: 0 auto;
+        padding: 1rem 0 1rem;
         position: relative;
-        padding: 3.2rem;
+       
         background-color: rgba($color: #000000, $alpha: 0);
         z-index: 2;
         display: flex;
         flex-direction: column;
         color: white;
-        width: 65rem;
-        margin: 2rem auto;
+        width: 100%;
+        @media screen and (min-width: 65rem) {
+            width: 65rem;
+            
+        }
+    
     }
     &__movie-list{
         position: relative;
         z-index: 1;
-        height: 90vh;
         display: flex;
         align-items: center;
-        gap: $gap;
+        flex-wrap: wrap;
+       justify-content: space-evenly;
     }
 
     &__movie-item{
         
-        background-color: #171717;
+        background-color: transparent;
+        flex-basis: 15rem;
         
-        width: calc(calc(100%/$movie_count) - $gap);
+
+        overflow: hidden;
         display: flex;
         flex-direction: column;
         align-items: center;
-        
+        gap: 1.5rem;
         transition: 1s;
         &:hover{
             
             color: #3093ef;
             cursor: pointer;
+            scale: 1.1;
         }
     }
     &__img-div{
         background: white;
         transition: 1s;
-        height: 10rem;
+        width: 100%;
+        height: 8rem;
+        overflow: hidden;
         &:hover{
             scale: 1.1;
         }
