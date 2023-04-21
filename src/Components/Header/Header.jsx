@@ -1,7 +1,5 @@
 import "./Header.scss";
-import client_image from "../../Assets/Images/client.jpg";
 import { motion } from "framer-motion";
-import Typed from "typed.js";
 import { Link } from "react-scroll";
 
 import { useEffect, useRef } from "react";
