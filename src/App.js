@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Portfolio from './Components/Portfolio/Portfolio';
 import About from './Components/About/About';
 import { Link, Element } from 'react-scroll';
+import Showreel from './Components/Showreel/Showreel';
 
 
 function App() {
@@ -30,6 +31,9 @@ function App() {
       </Element>
       <Element name = "Portfolio">
         <Portfolio/>
+      </Element>
+      <Element name = "Showreel">
+        <Showreel/>
       </Element>
       </>
       }

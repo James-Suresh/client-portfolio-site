@@ -61,6 +61,7 @@ const Portfolio = () => {
         exit = {{opacity: 0}}
         transition = {{duration: 0.5}}
         className="portfolio__bg" src={bg}></motion.img> 
+        
       )} 
       </AnimatePresence>
 

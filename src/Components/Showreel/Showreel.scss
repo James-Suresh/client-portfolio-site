@@ -1,0 +1,23 @@
+.showreel{
+   
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 2rem;
+    &__title{
+        display: flex;
+        justify-content: center;
+        padding: 0 0 1rem;
+    }
+    &__video{
+        border-radius: 0.25rem;
+        overflow: hidden;
+        aspect-ratio: 16/9;
+        width: calc(100vw - 4rem);
+        margin: 1.5remrem auto;
+        @media screen and (min-width: 65rem) {
+        width: 65rem;
+    }
+
+    }
+    
+}
