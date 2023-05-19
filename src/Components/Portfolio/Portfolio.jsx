@@ -9,12 +9,12 @@ import pachinko_bg from "../../Assets/Images/Pachinko-bg.jpg";
 import wednesday_bg from "../../Assets/Images/Wednesday-bg.jpg";
 import where_crawdads_sing_bg from "../../Assets/Images/WTCS-bg.jpg";
 
-import pachinko_title_image from "../../Assets/Images/Pachinko-title.jpg";
-import wednesday_title_image from "../../Assets/Images/Wednesday-title.jpg";
+import pachinko_title_image from "../../Assets/Images/Pachinko-title.png";
+import wednesday_title_image from "../../Assets/Images/Wednesday-title.png";
 import where_crawdads_sing_title_image from "../../Assets/Images/WTCS-title.png";
 import "./Portfolio.scss";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 const movies = [
     {
@@ -45,24 +45,38 @@ const movies = [
 
 const Portfolio = () => {
   const [video, setVideo] = useState(null);
+  const [anim, setAnim]= useState(true);
   const [bg, setBg] = useState(null);
+  const [bg2, setBg2] = useState(null);
   
+   
+  useEffect(() => {
+    console.log("anim", anim)
+  }, [anim]);
   
 
   return (
-    <div className="portfolio"
+    <motion.div className="portfolio"
+    initial = {{opacity: 0}}
+    animate = {{opacity: 1}}
+
+    transition = {{delay: 5,duration: 1}}
     >
+
       
       <AnimatePresence>
+      
        {bg && (
         <motion.img
         initial = {{opacity: 0}}
         animate = {{opacity: 1}}
         exit = {{opacity: 0}}
+        onExitComplete={()=>setAnim(!anim)}
         transition = {{duration: 0.5}}
         className="portfolio__bg" src={bg}></motion.img> 
         
       )} 
+    
       </AnimatePresence>
 
       {/* {video && (
@@ -73,7 +87,24 @@ const Portfolio = () => {
       <div className="portfolio__content"
       
       >
-        <h1 className="portfolio__title">Portfolio</h1>
+        <AnimatePresence>
+        {!bg && 
+        
+        <motion.h1
+        initial = {{opacity: 0}}
+        animate = {{opacity: 1}}
+        exit = {{opacity: 0}}
+        className="portfolio__title">Portfolio</motion.h1>
+        }
+        {bg &&  
+        
+        <motion.h1
+        initial = {{opacity: 1}}
+        animate = {{opacity: 0}}
+        exit = {{opacity: 1}}
+        className="portfolio__title">Portfolio</motion.h1>
+        }
+        </AnimatePresence>
 
         <ul className="portfolio__movie-list">
           { movies.map((movie, index) => (
@@ -83,21 +114,48 @@ const Portfolio = () => {
               viewport={{ once: true, amount: 0.8 }}
               transition={{ delay: 0.5 * index, duration: 0.5, type: "tween" }}
               key={index}
-              onMouseEnter={() => setBg(movie.bg)}
+              onMouseEnter={() => 
+              {  
+                setBg(movie.bg)
+
+              }
+              }
               onMouseLeave={() => {
                 setBg(null);
+              }}
+              onMouseHover={() => {
+                console.log("hover")
               }}
               className="portfolio__movie-item"
             >
               <div className="portfolio__img-div">
                 <img src={movie.image} alt={movie.title} />
               </div>
-              <span> {movie.roles} </span>  
+              {!bg && 
+              
+                <motion.span
+                initial = {{opacity: 0}}
+        animate = {{opacity: 1}}
+        exit = {{opacity: 0}}
+       
+                > {movie.roles} </motion.span> 
+              }
+              {bg && 
+              
+              <motion.span
+              initial = {{opacity: 1}}
+      animate = {{opacity: 0}}
+      exit = {{opacity: 1}}
+              > {movie.roles} </motion.span> 
+            }
+
+
+               
             </motion.li>
           ))}
         </ul>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

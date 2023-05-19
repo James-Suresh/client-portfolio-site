@@ -9,12 +9,14 @@
         width: 100%;
         display: flex;
         gap: 2rem;
+        height: 45vh;
     }
 
     &__logo{
         width: 40%;
         border-radius: 0.25rem;
         overflow: hidden;
+        height: 20rem;
     img{
         border-radius: 0.25rem;
         object-fit: cover;
