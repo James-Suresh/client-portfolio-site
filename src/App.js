@@ -3,6 +3,7 @@ import './App.scss';
 import { useEffect, useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Portfolio from './Components/Portfolio/Portfolio';
+import Hero from './Components/Hero/Hero';
 import About from './Components/About/About';
 import { Link, Element } from 'react-scroll';
 import Showreel from './Components/Showreel/Showreel';
@@ -26,6 +27,9 @@ function App() {
       {(width>768) &&
       <>
       <Header/>
+      <Element name = "">
+        <Hero/>
+      </Element>
       <Element name = "About">
         <About/>
       </Element>

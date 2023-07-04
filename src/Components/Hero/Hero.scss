@@ -1,0 +1,115 @@
+@use '../../Assets/Styles/partials/variables' as *;
+@import '../../Assets/Styles/partials/mixins';
+
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap');
+
+.hero{  
+   // background-image: url("../../Assets/Images/hero-bg-2.jpg");
+    background-color: rgba(0, 0, 0, 0.04);
+    //background-blend-mode: color;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 50vh;
+    padding: 0 2rem;
+    display: flex;
+    
+    &__content{
+        width: 100%;
+        @media screen and (min-width: 65rem) {
+            width: 65rem;
+        }
+        margin: 0 auto 0;
+        height: 100%;
+        display: flex;
+        
+    justify-content: center;
+    align-items: center;
+        flex-direction: column;
+        
+        gap: 2rem;
+    }
+
+    &__logo{
+        display: none;
+        width: 40%;
+        border-radius: 0.25rem;
+        overflow: hidden;
+    img{
+        border-radius: 0.25rem;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        transition: 1s;
+   
+    }
+  
+    }
+
+    &__body{
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        align-content: space-between;
+    }
+    &__title-div{
+        color: $secondary-color;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    &__title{
+        font-family: 'Croissant One', cursive;
+        font-size: 5rem;
+      
+        
+    }
+    .typed-cursor {
+        display: none
+    }
+    
+    &__subtitle{
+        font-size: 1.35rem;
+    }
+    &__description{
+        
+        display: none;
+        font-size: 1.2rem;
+        font-weight: 400;
+        padding: 1rem 0 0 0 ;
+        word-wrap:break-word;
+    }
+    &__socials{
+        display: flex;
+        gap: 2rem;
+        margin: 1rem;
+    }
+    &__socials-btn{
+        font-family: inherit;
+        font-size: large;
+        font-weight: 600;
+        padding: 0.5rem 1.5rem;
+        background-color: transparent;
+        border-radius: 0.1rem;
+        border: 1px solid black;
+        transition: 0.5s;
+        &--in{
+            transition: 0.5s;
+            &:hover{
+                background-color: #0072b1;
+                color: white;
+                cursor: pointer;
+            }
+        }
+        &--imdb{
+            &:hover{
+                background-color: #f3ce13;
+                
+                cursor: pointer;
+            }
+        }
+
+    }
+}

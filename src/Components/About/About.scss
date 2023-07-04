@@ -1,90 +1,9 @@
+@use '../../Assets/Styles/partials/variables' as *;
+@import '../../Assets/Styles/partials/mixins';
+
 .about{
-    padding: 0 2rem;
-    &__content{
-        width: 100%;
-        @media screen and (min-width: 65rem) {
-            width: 65rem;
-        }
-        margin: 6rem auto 2rem;
-        width: 100%;
-        display: flex;
-        gap: 2rem;
-        height: 45vh;
-    }
-
-    &__logo{
-        width: 40%;
-        border-radius: 0.25rem;
-        overflow: hidden;
-        height: 20rem;
-    img{
-        border-radius: 0.25rem;
-        object-fit: cover;
-        width: 100%;
-        height: 100%;
-        transition: 1s;
-   
-    }
-  
-    }
-
-    &__body{
-        
-        display: flex;
-        flex-direction: column;
-        width: 60%;
-    }
-    &__title-div{
-        display: flex;
-        
-    }
-    
-    &__title{
-        font-size: 1.35rem;
-        
-    }
-    .typed-cursor {
-        display: none
-    }
-    
-    &__subtitle{
-        font-size: 1.35rem;
-    }
-    &__description{
-        font-size: 0.85rem;
-        font-weight: 400;
-        padding: 1rem 0 0 0 ;
-        word-wrap:break-word;
-    }
-    &__socials{
-        display: flex;
-        gap: 2rem;
-        margin: 1rem;
-    }
-    &__socials-btn{
-        font-family: inherit;
-        font-size: large;
-        font-weight: 600;
-        padding: 0.5rem 1.5rem;
-        background-color: transparent;
-        border-radius: 0.1rem;
-        border: 1px solid black;
-        transition: 0.5s;
-        &--in{
-            transition: 0.5s;
-            &:hover{
-                background-color: #0072b1;
-                color: white;
-                cursor: pointer;
-            }
-        }
-        &--imdb{
-            &:hover{
-                background-color: #f3ce13;
-                
-                cursor: pointer;
-            }
-        }
-
-    }
+    margin: 0 auto ;
+     @include desktop{
+        width: 65rem;
+     }
 }

@@ -90,19 +90,19 @@ const Portfolio = () => {
         <AnimatePresence>
         {!bg && 
         
-        <motion.h1
+        <motion.h3
         initial = {{opacity: 0}}
         animate = {{opacity: 1}}
         exit = {{opacity: 0}}
-        className="portfolio__title">Portfolio</motion.h1>
+        className="portfolio__title">Portfolio</motion.h3>
         }
         {bg &&  
         
-        <motion.h1
+        <motion.h2
         initial = {{opacity: 1}}
         animate = {{opacity: 0}}
         exit = {{opacity: 1}}
-        className="portfolio__title">Portfolio</motion.h1>
+        className="portfolio__title">Portfolio</motion.h2>
         }
         </AnimatePresence>
 

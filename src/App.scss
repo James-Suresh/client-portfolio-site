@@ -1,4 +1,7 @@
 @import './Assets/Styles/fonts';
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap');
+
+
 .App{
 font-family: 'PlusJakartaSans', sans-serif;
 
@@ -6,8 +9,20 @@ font-family: 'PlusJakartaSans', sans-serif;
 h1{
     font-size: 1.35rem;
 }
-h2{
+h2{   
     font-size: 1.125rem;
+}
+h3{
+
+    color: black;
+    font-size: 1.125rem;
+    padding: 1rem 0;
+}
+
+
+p{
+    font-size: 1rem;
+    padding: 0.5rem 0;
 }
 *{
     padding: 0%;

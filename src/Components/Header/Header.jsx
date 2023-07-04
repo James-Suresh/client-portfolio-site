@@ -12,6 +12,8 @@ const Header = () => {
   
   return (
     <header className="header">
+      <div className="header__empty-nav">
+      </div>
       <motion.nav
         className="header__nav"
         initial={{ width: 0 }}
